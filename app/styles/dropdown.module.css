@@ -1,0 +1,37 @@
+.layout {
+    backdrop-filter: blur(var(--acrylic));
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(var(--darkRGB), 0.5);
+    padding: 4px;
+    border-radius: var(--corners);
+    text-align: center;
+}
+
+.option {
+    background-color: transparent;
+    border-radius: var(--corners);
+    padding: 4px 8px;
+    display: flex;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        opacity: 100%;
+    }
+}
+
+.negative {
+    color: var(--negative);
+    width: 100%;
+}
+
+.normal {
+    width: 100%;
+}
+
+.overflow {
+    overflow: hidden;
+    position: absolute;
+    z-index: 500000;
+}

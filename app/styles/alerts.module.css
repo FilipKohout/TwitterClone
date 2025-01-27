@@ -1,0 +1,37 @@
+.layout {
+    backdrop-filter: blur(var(--acrylic));
+    min-width: 120px;
+    display: flex;
+    background-color: rgba(var(--darkRGB), 0.5);
+    border-radius: var(--corners);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px 8px;
+}
+
+.option {
+    background-color: transparent;
+    border-radius: var(--corners);
+    padding: 4px 8px;
+    display: flex;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.negative {
+    color: var(--negative);
+}
+
+.dismiss {
+    background: transparent;
+    margin-top: 2px;
+    margin-right: auto;
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    pointer-events: auto;
+}

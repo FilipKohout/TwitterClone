@@ -1,0 +1,23 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container {
+    border-radius: var(--corners);
+    padding: 1rem;
+    width: 400px;
+    background-color: var(--foreground);
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.heading {
+    text-align: center;
+}

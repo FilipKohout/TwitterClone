@@ -1,0 +1,269 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1a1a1a;
+  --backgroundRGB: 26, 26, 26;
+  --foreground: #292929;
+  --foregroundRGB: 41, 41, 41;
+  --dark: black;
+  --darkRGB: 0, 0, 0;
+  --primary: #006fff;
+  --primaryRGB: 0, 111, 255;
+  --negative: #ff4545;
+  --negativeRGB: 255, 69, 69;
+  --positive: #008500;
+  --positiveRGB: 0, 133, 0;
+  --warning: #ffb000;
+  --warningRGB: 255, 176, 0;
+  --textcolor: white;
+  --border: #656565;
+  --corners: 12px;
+  --acrylic: 12px;
+}
+
+body {
+  color: var(--textcolor);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+textarea {
+  font-size: 1rem;
+  background-color: var(--dark);
+  overflow: hidden;
+}
+
+input, .textarea, .textboxContainer {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: var(--corners);
+  border: 2px solid var(--border);
+  background-color: var(--dark);
+}
+
+img {
+    border-radius: var(--corners);
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input:focus, .textarea:focus {
+  outline: none;
+  background-color: var(--dark);
+  border: 2px solid var(--primary);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px var(--dark) inset;
+  -webkit-text-fill-color: var(--textcolor);
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px var(--dark) inset;
+  -webkit-text-fill-color: var(--textcolor);
+}
+
+.noFocus:focus {
+  border: 2px solid transparent;
+}
+
+button, .button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: var(--corners);
+  background-color: var(--primary);
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 70%;
+    transition: 0.5s;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.error {
+  color: var(--negative);
+}
+
+.topBar {
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.negativeButton {
+  background-color: var(--negative);
+}
+
+.outline {
+    border: 2px solid var(--border);
+}
+
+.blankButton {
+  background: transparent;
+  transition: 0.5s;
+
+  &:hover {
+    color: var(--primary);
+    opacity: 100%;
+    transition: 0.5s;
+  }
+}
+
+.negativeSelect {
+  &:hover {
+    color: var(--negative);
+    transition: 0.5s;
+  }
+}
+
+.primarySelect {
+    &:hover {
+        color: var(--primary);
+        transition: 0.5s;
+    }
+}
+
+.backgroundButton {
+  background-color: var(--background);
+}
+
+.frame {
+    border-radius: var(--corners);
+    background-color: var(--foreground);
+    padding: 0.5rem;
+}
+
+.noBorder {
+  border: 2px solid transparent;
+}
+
+.bgframe {
+  border-radius: var(--corners);
+  background-color: var(--background);
+  padding: 0.5rem;
+}
+
+.borderSelect {
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px var(--primary);
+    transition: 0.5s;
+  }
+}
+
+.outlineSelect {
+  transition: 0.5s;
+
+  &:hover {
+    border: var(--primary) 2px solid;
+    transition: 0.5s;
+  }
+}
+
+.primaryOutline {
+    border: var(--primary) 2px solid;
+}
+
+.primaryBorder {
+    box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: var(--corners);
+}
+
+.acrylic {
+  backdrop-filter: blur(var(--acrylic));
+}
+
+.primaryColor {
+    color: var(--primary);
+}
+
+.selected {
+    background-color: rgba(var(--primaryRGB), 0.1);
+}
+
+:target, .highlight {
+  animation: highlight 2000ms ease-out;
+}
+
+@keyframes highlight {
+  from {
+    background-color: var(--primary);
+  }
+}
+
+.biggerIcon:before {
+  font-size: 28px;
+}
+
+.midIcon:before {
+  font-size: 20px;
+}
+
+.bigProfileIcon:before {
+  font-size: 10rem;
+  margin: auto;
+}
+
+.noText {
+  line-height: 0;
+  font-size: 0;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: var(--corners);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: whitesmoke;
+  border-radius: var(--corners);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Ensure the sidebar scrolls first and then sticks */
+.sticky-container {
+  position: relative;
+  max-height: calc(100vh - 4rem); /* Space for the top padding, e.g., navbar height */
+  overflow: hidden;
+}
+
+.sticky-content {
+  position: sticky;
+  top: 4rem; /* Adjust based on your design (e.g., navbar height) */
+  bottom: 1rem; /* Optional: Add bottom padding when it sticks */
+  overflow-y: auto; /* Allow scrolling of the content when necessary */
+  height: calc(100vh - 4rem); /* Sidebar should stop scrolling when content fits the viewport */
+  padding-right: 0.5rem; /* Avoid cutting off content due to scrollbars */
+}

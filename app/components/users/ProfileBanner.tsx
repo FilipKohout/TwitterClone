@@ -67,7 +67,7 @@ export default function ProfileBanner({ userInfo }: { userInfo?: UserInfo }) {
                     {parseInt(localUserId || "") !== userInfo?.id &&
                         <>
                             <button className="min-w-20 h-10" onClick={handleFollow}>{currentUserInfo?.is_followed ? "Unfollow" : "Follow"}</button>
-                            <button className="negativeButton w-20 h-10">Block</button>
+                            {/*<button className="negativeButton w-20 h-10">Block</button>*/}
                         </>
                     }
                 </div>

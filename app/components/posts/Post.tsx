@@ -6,13 +6,12 @@ import DropdownOption from "@/app/components/utils/DropdownOption";
 import { useCookies } from "next-client-cookies";
 import Link from "next/link";
 import useRemovePost from "@/app/hooks/posts/useRemovePost";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { likePostAction } from "@/app/actions/posts";
 import { AlertsContext } from "@/app/providers/AlertsProvider";
 import CreatePost from "@/app/components/posts/CreatePost";
 import Modal from "@/app/components/utils/Modal";
 import ShareModal from "@/app/components/posts/ShareModal";
-import styles from "@/app/styles/posts.module.css";
 import { redirect } from "next/navigation";
 
 export default function Post({ post, filter = {}, isReply, respondingEnabled = true, isPreview = false, dark = false }: { post: Post, filter?: PostsFilter, isReply?: boolean, respondingEnabled?: boolean, isPreview?: boolean, dark?: boolean }) {

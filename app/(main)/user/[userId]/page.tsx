@@ -1,10 +1,8 @@
 import React from "react";
-import PostsSuspense from "@/app/components/posts/PostsSuspense";
 import ProfileBannerSuspense from "@/app/components/users/ProfileBannerSuspense";
-import ProfileBanner from "@/app/components/users/ProfileBanner";
 import PostsList from "@/app/components/posts/PostsList";
 
-export default async function ProfilePage({ params }: { params: { userId: string } }) {
+export default async function ProfilePage({ params }: { params: Promise<{ userId: string }> }) {
     const { userId } = await params;
 
     return (

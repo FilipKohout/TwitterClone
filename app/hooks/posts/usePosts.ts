@@ -13,7 +13,8 @@ export default function usePosts({ filter = {} }: { filter?: PostsFilter }) {
     const key = getKeyFromPostFilter(filter);
 
     const { data, isError, isLoading, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery<PostsQuery>({
-        queryKey: [key], // @ts-ignore
+        queryKey: [key],
+        // @ts-expect-error Types don't match, but this is the correct usage
         queryFn: ({ pageParam = 1 }: { pageParam?: number }) => new Promise((resolve, reject) => {
             getPostsAction(pageParam, filter)
                 .then(result => {

@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const Skeleton = (props: any) => (
+const Skeleton = (props: { dark?: boolean, notifications: number }) => (
     <div className={"flex flex-col gap-3 w-full " + (props.dark ? "bgframe " : "frame ")}>
         <ContentLoader
             speed={2}

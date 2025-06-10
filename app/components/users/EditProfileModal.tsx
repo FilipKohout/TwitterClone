@@ -37,6 +37,7 @@ export default function EditProfileModal({ closeFunction, updateUserInfo }: { cl
         else {
             updateProfile({ name: name as string, id: privateUserInfo?.id || 0, email: email as string, profileURL: privateUserInfo?.profileURL, bio } as PrivateUserInfo)
                 .then(info => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                     updateUserInfo && updateUserInfo(info as UserInfo);
                     addAlert({ message: "Profile updated", severity: "success", timeout: 5 });
                 })
@@ -65,7 +66,7 @@ export default function EditProfileModal({ closeFunction, updateUserInfo }: { cl
                     <label htmlFor={fileUploadId} className="h-full primarySelect mb-1">
                         <input multiple id={fileUploadId} onChange={onProfileChange} className="hidden" type="file" accept="image/png, image/gif, image/jpeg"/>
                         <div>
-                            <img src={profileImagePreview || ""} className="rounded-full w-60 h-60 mr-auto ml-auto border-0"/>
+                            <img src={profileImagePreview || ""} alt="profile image" className="rounded-full w-60 h-60 mr-auto ml-auto border-0"/>
                             <i className="fi fi-sr-upload rounded-full w-60 h-60 mr-auto ml-auto flex -mt-60 bigProfileIcon outline"/>
                         </div>
                     </label>

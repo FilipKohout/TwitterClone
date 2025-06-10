@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Children, ReactElement, useEffect } from "react";
+import React, { Children, useEffect } from "react";
 import styles from "@/app/styles/modals.module.css";
 import { animated, useSpring, useSpringValue } from "@react-spring/web";
 
@@ -10,8 +10,10 @@ export default function Modal({ modal, children, callbackFn, identifier }: { mod
     const [springs, api] = useSpring(() => {});
     const opacity = useSpringValue(0, { config: { duration: 200 } });
 
-    const handleOpen = (event?: React.MouseEvent<HTMLElement> | any) => {
+    const handleOpen = (event?: React.MouseEvent<HTMLElement> | Event) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         event && event.preventDefault();
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         callbackFn && callbackFn();
 
         setIsOpen(true);

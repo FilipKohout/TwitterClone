@@ -1,4 +1,3 @@
-import styles from "@/app/styles/modals.module.css";
 import UserProfileListItem from "@/app/components/users/UserProfileListItem";
 import useUsers, { UsersQuery } from "@/app/hooks/users/useUsers";
 import { useMemo } from "react";
@@ -21,7 +20,7 @@ export default function UserProfileList({ source, userId, limit }: { source: Use
             {pagelessPosts &&
                 (
                     pagelessPosts.length > 0
-                        ? pagelessPosts.slice(0, limit || undefined).map(userInfo => <UserProfileListItem userInfo={userInfo}/>)
+                        ? pagelessPosts.slice(0, limit || undefined).map(userInfo => <UserProfileListItem key={userInfo.id} userInfo={userInfo}/>)
                         : <p className="w-full text-center">No users</p>
                 )
             }

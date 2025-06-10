@@ -1,6 +1,6 @@
 "use server";
 
-import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import PostsSkeleton from "@/app/components/posts/PostsSkeleton";
 import PostsList, { postListProps } from "@/app/components/posts/PostsList";
 import React, { Suspense } from "react";

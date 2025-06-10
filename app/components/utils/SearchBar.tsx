@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react";
-import debounce from 'just-debounce-it'
+import debounce from "just-debounce-it";
 
 export default function SearchBar({ setQuery, query, placeholder }: { setQuery: (query: string) => void, query: string, placeholder: string }) {
     const [focused, setFocused] = useState(false);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedQuery = useCallback(
         debounce((newQuery: string) => {
             setQuery(newQuery);
-        }, 300)
-        , [setQuery]
+        }, 300),
+        [setQuery]
     )
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

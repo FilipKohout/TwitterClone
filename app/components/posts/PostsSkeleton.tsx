@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const Skeleton = (props: any) => (
+const Skeleton = (props: { posts?: number }) => (
     <div className="frame flex flex-col gap-3 w-main">
         <ContentLoader
             speed={2}

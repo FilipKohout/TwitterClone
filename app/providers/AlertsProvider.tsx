@@ -36,7 +36,7 @@ export const AlertsProvider = ({ children }: { children: React.ReactNode }) => {
         <AlertsContext.Provider value={{ alerts, setAlerts, addAlert, dismissAlert }}>
             <div className={"fixed top-14 z-50 pointer-events-none flex flex-col gap-1 w-screen"}>
                 {alerts.map((alert) => (
-                    <Alert key={alert.id} {...alert} handleDismiss={() => { alert?.id && dismissAlert(alert.id) }} />
+                    <Alert key={alert.id} {...alert} handleDismiss={() => (alert?.id && dismissAlert(alert.id))} />
                 ))}
             </div>
             {children}

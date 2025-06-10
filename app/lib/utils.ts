@@ -31,7 +31,7 @@ export async function getUserProfile(userId: number): Promise<string | undefined
     return blob.blobs[0]?.url;
 }
 
-export function userToUserInfo(user: User, additional?: any): UserInfo {
+export function userToUserInfo(user: User, additional?: object): UserInfo {
     return {
         id: user.id,
         name: user.name,

@@ -2,7 +2,6 @@
 
 import React, { Children } from "react";
 import styles from "@/app/styles/dropdown.module.css";
-import Modal from "@/app/components/utils/Modal";
 
 type props = { title: string, negative?: boolean, children?: React.ReactNode, callbackFn?: () => void, index?: number, modalIdentifier?: string };
 
@@ -10,6 +9,7 @@ export default function DropdownOption({ title, children, negative, callbackFn, 
     const icon = children && Children.only(children) as React.ReactElement;
 
     const handleClick = () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         callbackFn && callbackFn();
 
         if (modalIdentifier) {

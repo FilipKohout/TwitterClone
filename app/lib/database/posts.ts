@@ -1,4 +1,4 @@
-import { QueryResult, sql, Client } from "@vercel/postgres";
+import { QueryResult, sql } from "@vercel/postgres";
 import { Paginator } from "@/app/lib/definitions";
 
 export interface Post {

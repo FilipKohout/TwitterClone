@@ -56,7 +56,7 @@ export async function getPostsAction(page: number, filter: PostsFilter): Promise
     const cookieStore = await cookies();
     const userId = await validateToken(cookieStore.get("token")?.value || "") || 0;
     const paginator = new Paginator(postsQueryPageSize, page);
-    let result = await getPosts(userId, paginator, filter);
+    const result = await getPosts(userId, paginator, filter);
 
     const hasNextPage = result.length === postsQueryPageSize + 1;
     if (hasNextPage)

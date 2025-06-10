@@ -36,13 +36,14 @@ export default function useNewPost({ onPostingSuccess, filter = {} }: { onPostin
                 .catch(reject);
         }),
         onSuccess: async (newPost: Post) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             onPostingSuccess && onPostingSuccess();
 
             newPost.is_new = true;
             newPost.profile_url = await getProfileURLAction(newPost.poster_id);
 
             queryClient.setQueryData([key], (oldPosts?: { pages: PostsQuery[] }) => {
-                let posts = structuredClone(oldPosts);
+                const posts = structuredClone(oldPosts);
 
                 posts?.pages?.flatMap((page: PostsQuery) => page.posts).forEach(post => post.is_new = false);
 

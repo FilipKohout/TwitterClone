@@ -4,7 +4,7 @@ import { SimpleResponse } from "@/app/lib/definitions";
 import { createUser, getUserByEmail, getUserByName } from "@/app/lib/database/users";
 import { createSession } from "@/app/lib/session";
 import { cookies } from "next/headers";
-// @ts-ignore
+// @ts-expect-error Bcrypt doesn't have types
 import bcrypt from "bcrypt";
 
 export async function loginAction(username: string, password: string): Promise<SimpleResponse> {

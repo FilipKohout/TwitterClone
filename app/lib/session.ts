@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error JWT doesn't have types
 import jwt from "jsonwebtoken";
 
 export function createSession(userId: number): string {

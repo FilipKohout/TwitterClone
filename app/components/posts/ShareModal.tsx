@@ -17,6 +17,7 @@ export default function ShareModal({ closeFunction, postId }: { closeFunction?: 
 
     const handleClose = (event: React.MouseEvent<HTMLElement>) => {
         event.preventDefault();
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         closeFunction && closeFunction();
     }
 

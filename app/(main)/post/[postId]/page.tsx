@@ -1,11 +1,10 @@
 import React from "react";
-import Post from "@/app/components/posts/Post";
 import { PostSuspense } from "@/app/components/posts/PostSuspense";
 import CreatePost from "@/app/components/posts/CreatePost";
 import PostsSuspense from "@/app/components/posts/PostsSuspense";
 import { PostsFilter } from "@/app/lib/database/posts";
 
-export default async function PostPage({ params }: { params: { postId: string } }) {
+export default async function PostPage({ params }: { params: Promise<{ postId: string }> }) {
     const { postId } = await params;
 
     const filter: PostsFilter = { parentPostId: parseInt(postId) };

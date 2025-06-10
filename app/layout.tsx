@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { CookiesProvider } from 'next-client-cookies/server';
 import { TopBar } from "@/app/components/TopBar";
+import '@flaticon/flaticon-uicons/css/all/all.css';
 import "./styles/globals.css";
 import ReactQueryProvider from "@/app/providers/ReactQueryProvider";
 import { AlertsProvider } from "@/app/providers/AlertsProvider";

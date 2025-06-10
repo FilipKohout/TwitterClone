@@ -1,5 +1,3 @@
-@import "~@flaticon/flaticon-uicons/css/all/all";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,7 +46,7 @@ input, .textarea, .textboxContainer {
 }
 
 img {
-    border-radius: var(--corners);
+  border-radius: var(--corners);
 }
 
 textarea:focus {
@@ -108,7 +106,7 @@ h1 {
 }
 
 .outline {
-    border: 2px solid var(--border);
+  border: 2px solid var(--border);
 }
 
 .blankButton {
@@ -130,10 +128,10 @@ h1 {
 }
 
 .primarySelect {
-    &:hover {
-        color: var(--primary);
-        transition: 0.5s;
-    }
+  &:hover {
+    color: var(--primary);
+    transition: 0.5s;
+  }
 }
 
 .backgroundButton {
@@ -141,9 +139,9 @@ h1 {
 }
 
 .frame {
-    border-radius: var(--corners);
-    background-color: var(--foreground);
-    padding: 0.5rem;
+  border-radius: var(--corners);
+  background-color: var(--foreground);
+  padding: 0.5rem;
 }
 
 .noBorder {
@@ -175,11 +173,11 @@ h1 {
 }
 
 .primaryOutline {
-    border: var(--primary) 2px solid;
+  border: var(--primary) 2px solid;
 }
 
 .primaryBorder {
-    box-shadow: inset 0 0 0 2px var(--primary);
+  box-shadow: inset 0 0 0 2px var(--primary);
 }
 
 .container {
@@ -194,11 +192,11 @@ h1 {
 }
 
 .primaryColor {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .selected {
-    background-color: rgba(var(--primaryRGB), 0.1);
+  background-color: rgba(var(--primaryRGB), 0.1);
 }
 
 :target, .highlight {

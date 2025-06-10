@@ -38,6 +38,7 @@ export default function useProfile({ userId, onUpdatingSuccess }: { userId?: num
                 }
 
                 setUserInfo(response.privateUserInfo);
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 onUpdatingSuccess && onUpdatingSuccess();
                 resolve(response.privateUserInfo);
             })
@@ -71,7 +72,7 @@ export default function useProfile({ userId, onUpdatingSuccess }: { userId?: num
                 lastUserInfo.current = response.privateUserInfo || null;
             })
             .catch(error => setError(error.message || "An error occurred"));
-    }, []);
+    }, [userId]);
 
     return { updating, error, privateUserInfo: userInfo, lastPrivateUserInfo: lastUserInfo.current, updateProfile, updatePrivateUserInfo: setUserInfo, changeProfileImage: changeProfileImage, profileImagePreview: imagePreview, profileImageURL: profileImage };
 }

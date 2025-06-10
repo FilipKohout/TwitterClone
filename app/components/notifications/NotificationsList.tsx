@@ -1,9 +1,8 @@
 "use client";
 
-import { maxNotifications, usersQueryPageSize } from "@/app/lib/consts";
+import { maxNotifications } from "@/app/lib/consts";
 import useNotifications from "@/app/hooks/notifications/useNotifications";
 import Notification from "@/app/components/notifications/Notification";
-import UserProfileListItemSkeleton from "@/app/components/users/UserProfileListItemSkeleton";
 import NotificationsSkeleton from "@/app/components/notifications/NotificationsSkeleton";
 
 export default function NotificationsList({ limit, isPreview, dark }: { limit?: number, isPreview?: boolean, dark?: boolean }) {
@@ -14,7 +13,7 @@ export default function NotificationsList({ limit, isPreview, dark }: { limit?: 
             {data &&
                 (
                     data.length > 0
-                        ? data.slice(0, limit || maxNotifications).map(notification => <Notification isPreview={isPreview} notification={notification} dark={dark} />)
+                        ? data.slice(0, limit || maxNotifications).map(notification => <Notification key={notification.id} isPreview={isPreview} notification={notification} dark={dark} />)
                         : <h2 className="w-full text-center">Nothing New Here</h2>
                 )
             }

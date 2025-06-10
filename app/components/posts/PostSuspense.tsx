@@ -4,10 +4,7 @@ import { Suspense } from "react";
 import { getPostById } from "@/app/lib/database/posts";
 import { cookies } from "next/headers";
 import { validateToken } from "@/app/lib/auth";
-import { list } from "@vercel/blob";
-import { maxImages } from "@/app/lib/consts";
-import { getKeyFromPostFilter, getPostImages, getUserProfile } from "@/app/lib/utils";
-import { getServerQueryClient } from "@/app/lib/queryClient";
+import { getPostImages, getUserProfile } from "@/app/lib/utils";
 
 type props = {
     postId: number,

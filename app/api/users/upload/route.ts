@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateToken } from "@/app/lib/auth";
 import { validateImages } from "@/app/lib/utils";
 import { put } from "@vercel/blob";
-import { getPostById } from "@/app/lib/database/posts";
 
 export async function POST(request: NextRequest) {
     const formData = await request.formData();

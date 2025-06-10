@@ -10,8 +10,9 @@ export interface UsersQuery {
 export default function useUsers({ sourceFunction, identificator }: { sourceFunction: (pageParam: number) => Promise<UserListResponse>, identificator: string | number }) {
     const key = `usersI${identificator}`;
 
-    const { data, isError, isLoading, fetchNextPage, hasNextPage, isFetching, error } = useInfiniteQuery<UsersQuery>({
-        queryKey: [key], // @ts-ignore
+    const { data, isError, isLoading, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery<UsersQuery>({
+        queryKey: [key],
+        // @ts-expect-error Types don't match, but this is the correct usage
         queryFn: ({ pageParam = 1 }: { pageParam?: number }) => new Promise((resolve, reject) => {
             sourceFunction(pageParam)
                 .then(result => {

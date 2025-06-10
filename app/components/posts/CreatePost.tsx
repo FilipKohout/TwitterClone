@@ -27,6 +27,7 @@ export default function CreatePost({ filter = {}, templateText, autoFocus, hideO
             addAlert({ message: "Description cannot be empty", severity: "warning", timeout: 5 });
         else {
             post({ content: content, images: images.current });
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             onPosted && onPosted();
         }
     }
@@ -61,9 +62,10 @@ export default function CreatePost({ filter = {}, templateText, autoFocus, hideO
         setImagePreviews(imagePreviews.filter((_, i) => i !== index));
     }
 
-    const onBlur = (event: React.FocusEvent) => {
+    const onBlur = () => {
         if (content.toString().replace(" ", "") === "") {
             setIsOpen(false);
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             onBlurCallback && setTimeout(onBlurCallback, 150);
         }
     }

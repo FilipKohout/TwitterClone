@@ -27,7 +27,7 @@ export default function Alert({ message = "", severity = "info", timeout = 0, ha
 
             return () => clearTimeout(timer);
         }
-    }, []);
+    }, [handleDismiss, opacity, timeout]);
 
     return (
         message?.length && (

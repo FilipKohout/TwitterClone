@@ -1,7 +1,7 @@
 "use client";
 
 import { type Notification } from "@/app/lib/database/notifications";
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
 import Post from "@/app/components/posts/Post";
 
@@ -37,13 +37,13 @@ export default function Notification({ notification, isPreview, dark }: { notifi
                     </h2>
                 );
             case "mention":
-                return <p>"mentioned you"</p>;
+                return <p>mentioned you</p>;
             case "warning":
-                return <p>"warning"</p>;
+                return <p>warning</p>;
             default:
-                return <p>"unknown"</p>;
+                return <p>unknown</p>;
         }
-    }, [type]);
+    }, [data, type]);
 
     return (
         <>

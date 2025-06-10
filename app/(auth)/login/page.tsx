@@ -44,7 +44,7 @@ export default function LoginPage() {
                     </button>
                     {error && <p className="error">{error}</p>}
                     <Link href="/register">
-                        Don't have an account yet?
+                        Don&#39;t have an account yet?
                     </Link>
                 </form>
             </div>

@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Post, PostsFilter } from "@/app/lib/database/posts";
+import { PostsFilter } from "@/app/lib/database/posts";
 import { removePostAction } from "@/app/actions/posts";
 import { useContext } from "react";
 import { AlertsContext } from "@/app/providers/AlertsProvider";
@@ -24,7 +24,7 @@ export default function useRemovePost({ filter = {} }: { filter?: PostsFilter })
         }),
         onSuccess: (id: number) => {
             queryClient.setQueryData([key], (oldPosts?: { pages: PostsQuery[] }) => {
-                let posts = structuredClone(oldPosts);
+                const posts = structuredClone(oldPosts);
 
                 posts?.pages?.flatMap((page: PostsQuery) => page.posts).forEach(post => post.is_new = false);
 
@@ -37,7 +37,7 @@ export default function useRemovePost({ filter = {} }: { filter?: PostsFilter })
                 return posts || { pages: [] };
             });
         },
-        onError: (error: any) => {
+        onError: (error: never) => {
             addAlert({ message: "Removal failed", severity: "error", timeout: 30 });
             console.error(error);
         }
